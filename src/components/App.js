@@ -28,22 +28,19 @@ class App extends React.Component {
         }
 
         this.setState({isFetching: true})
-        // axios.get(`${api_url}${trend}`, {
-        //     params: {
-        //         ...props
-        //     },
-        //     headers: {
-        //         'X-Api-Key': apiKey
-        //     }
-        // })
-        //     .then(res => {
-        //       const list = res.data.articles
-        //         this.setState({list, isFetching: false})
-        //     })
-        //     .catch(err => console.error(err))
-
-       const apiList = api
-       this.setState({list: apiList.articles, isFetching: false})
+        axios.get(`${api_url}${trend}`, {
+            params: {
+                ...props
+            },
+            headers: {
+                'X-Api-Key': apiKey
+            }
+        })
+            .then(res => {
+              const list = res.data.articles
+                this.setState({list, isFetching: false})
+            })
+            .catch(err => console.error(err))
     }
 
     loadNewsList() {

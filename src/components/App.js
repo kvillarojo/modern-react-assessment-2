@@ -22,7 +22,7 @@ class App extends React.Component {
 
     loadNewsList() {
         let keyNum = 0;
-        console.log(this.state.list)
+
         if (this.state.list.length) {
             return <div className="ui divided list">
                 {this.state.list.map(x => (

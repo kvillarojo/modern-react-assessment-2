@@ -12,12 +12,25 @@ class SearchBar extends Component {
 
     onFormSubmit(e){
         e.preventDefault();
-        if(this.state.topic === ''){
+
+        const {trend, country, topic} = this.state
+        let props = {
+            q: topic
+        }
+
+        if(topic === ''){
             alert('please fill the search field')
             return false
         }
 
-        this.props.onSubmit(this.state);
+        if(trend === 'top-headlines'){
+            props = {
+                q: topic,
+                country
+            }
+        }
+
+        this.props.onSubmit({trend, props});
     }
 
     handleOptionChange(e) {

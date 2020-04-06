@@ -2,8 +2,7 @@ import React from 'react';
 import {NewsDetails} from './NewsDetails'
 import {ImageViewer} from "./ImageViewer";
 import SearchBar from "./SearchBar";
-import {api, api_url, apiKey, getNewsList} from "../API/api";
-import axios from "axios";
+import {getNews} from "../API/api";
 import {Loader} from "./common/loader";
 
 class App extends React.Component {
@@ -15,32 +14,10 @@ class App extends React.Component {
         }
     }
 
-   handleSearch({trend, topic, country}) {
-        let props = {
-            q: topic
-        }
-
-        if(trend === 'top-headlines'){
-            props = {
-                q: topic,
-                country
-            }
-        }
-
+   async handleSearch({trend, props}) {
         this.setState({isFetching: true})
-        axios.get(`${api_url}${trend}`, {
-            params: {
-                ...props
-            },
-            headers: {
-                'X-Api-Key': apiKey
-            }
-        })
-            .then(res => {
-              const list = res.data.articles
-                this.setState({list, isFetching: false})
-            })
-            .catch(err => console.error(err))
+        const result = await getNews(trend, props)
+        this.setState({list: result, isFetching: false})
     }
 
     loadNewsList() {

@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project description
 
-#####Create a new react project and install semantic-ui-css and axios.
+######Create a new react project and install semantic-ui-css and axios.
 ######Carefully check the mockups below for you to properly scaffold the application before you even start creating any components.
 ######Fetch news articles from https://newsapi.org/. You will need to create an account to get an api key.
 ######Add at least 10 countries in the first dropdown options but make sure you include The Philippines, United States of America, Russia and China. Check their documentation on the list of countries available https://newsapi.org/docs/endpoints/top-headlines

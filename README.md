@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project description
+## Project Direction
 
 1. Create a new react project and install semantic-ui-css and axios.
 2. Carefully check the mockups below for you to properly scaffold the application before you even start creating any components.

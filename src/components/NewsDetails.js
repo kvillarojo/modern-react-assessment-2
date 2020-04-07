@@ -26,11 +26,13 @@ export const NewsDetails = ({children, title, content}) => {
     return (
         <div>
             <div className="item">
-                <div className={"ui header"}>
-                    <h3>{title}</h3>
-                </div>
-                <div className="content">
-                    <p> {content}  </p>
+                <div className={'ui grid'}>
+                    <div className={"ui header"}>
+                        <h3>{title}</h3>
+                    </div>
+                    <div className="content">
+                        <p> {content}  </p>
+                    </div>
                 </div>
             </div>
         </div>

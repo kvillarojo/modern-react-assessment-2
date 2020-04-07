@@ -54,10 +54,9 @@ class App extends React.Component {
                     :
                     this.loadNewsList()
                 }
-
-             </div>
-         )
-     }
+            </div>
+        )
+    }
 }
 
 export default App;
